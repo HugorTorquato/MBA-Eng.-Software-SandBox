@@ -18,11 +18,11 @@ WORKDIR /code/
 # Create a venv to install the requirements isolated
 #RUN Python -m venv /opt/venv
 
-COPY /Model/requirements.txt /code/Model/
+COPY /Code/Model/requirements.txt /code/Model/
 RUN pip install --no-cache-dir -r /code/Model/requirements.txt
 
 # Copy the entire source code to the container
 COPY . /code/
 
 # Makes the container to run indeffinitly
-ENTRYPOINT [ "Tail", "-f", "/dev/null" ]
+ENTRYPOINT [ "tail", "-f", "/dev/null" ]
