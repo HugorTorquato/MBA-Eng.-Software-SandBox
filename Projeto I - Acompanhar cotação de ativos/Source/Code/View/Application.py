@@ -8,7 +8,7 @@ data = [
     StockFastAPI(id=2, ticker="BBAS4", price=27.30)
 ]
 
-@app.get("/api/get")
+@app.get("/get")
 def get_all():
     return data
 
