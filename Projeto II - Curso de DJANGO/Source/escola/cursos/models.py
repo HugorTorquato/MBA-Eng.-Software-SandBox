@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Base(models.Model):
-    criação = models.DateTimeField(auto_now_add=True) # This field will be added automatcly
+    criacao = models.DateTimeField(auto_now_add=True) # This field will be added automatcly
     atualizacao = models.DateTimeField(auto_now=True) # This one will store the date when the record is updated
     ativo = models.BooleanField(default=True)
 
@@ -23,7 +23,7 @@ class Curso(Base):
         return self.titulo
 
 class Avaliacao(Base):
-    curso = models.ForeignKey(Curso, related_name='avaloacoes', on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, related_name='avaliacoes', on_delete=models.CASCADE)
     nome = models.CharField(max_length=255)
     email = models.EmailField() # We can validate the data with the programing itself... this field will only receive an email
     comentario = models.TextField(blank=True, default='')
@@ -32,7 +32,7 @@ class Avaliacao(Base):
     class Meta:
         verbose_name = "Avaliação"
         verbose_name_plural = "Acaliações"
-        unique_tigether = ['emai', 'curso']
+        unique_together = ['email', 'curso']
 
     def __str__(self):
         return f'{self.nome} avaliou o curso {self.curso} com nota {self.avaliacao}'

@@ -7,3 +7,5 @@ services:
       dockerfile: Dockerfile
     volumes:
       - "./Source:/srcc"
+    ports:
+      - "8000:8000"
