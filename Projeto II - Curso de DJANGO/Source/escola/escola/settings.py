@@ -26,10 +26,12 @@ SECRET_KEY = 'django-insecure-)19xpk9ilm@kj74azg27)uzy_7%0k*c050%$di0%=wtl!-d9dp
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0']
+# Command to start the local service ( python manage.py runserver 0.0.0.0:8000 )
 
 
 # Application definition
 
+# Every new app added to the class definition needs to be included here 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cursos'
+    'cursos',
+    'rest_framework' # Apartir de agora vai set um ap service rest
 ]
 
 MIDDLEWARE = [

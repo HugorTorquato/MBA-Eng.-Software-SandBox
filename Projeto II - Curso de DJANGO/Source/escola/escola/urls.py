@@ -14,9 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# Esse arquivo adiciona rotas para todo o projeto, rotas globais
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
+    #path('api/v1/', include('cursos.urls')),
     path('admin/', admin.site.urls),
+    #Essa rota faz faze o login no DJANGO rest_framework e não mais só no django
+    path('auth/', include('rest_framework.urls')) 
 ]
