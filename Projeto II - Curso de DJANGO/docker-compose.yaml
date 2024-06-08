@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  proj-curso:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./Source:/srcc"
+    ports:
+      - "8000:8000"
