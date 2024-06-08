@@ -13,7 +13,7 @@ from .serializers import CursoSerializer, AvaliacaoSerializer
 class CursoAPIView(generics.RetrieveUpdateDestroyAPIView):
     #Endpoins individuais
     queryset = Curso.objects.all()
-    serialize_class = CursoSerializer
+    serializer_class = CursoSerializer
 
 class CursosAPIView(generics.ListCreateAPIView):
     #Endpoins coletivos
