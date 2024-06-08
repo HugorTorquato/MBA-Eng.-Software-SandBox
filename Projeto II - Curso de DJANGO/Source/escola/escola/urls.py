@@ -21,7 +21,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    #path('api/v1/', include('cursos.urls')),
+    path('api/v1/', include('cursos.urls')),
     path('admin/', admin.site.urls),
     #Essa rota faz faze o login no DJANGO rest_framework e não mais só no django
     path('auth/', include('rest_framework.urls')) 
