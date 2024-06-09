@@ -70,19 +70,8 @@ class CursoViweSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['get'])
     def avaliacoes(self, request, pk=None):
-
-        #curso = self.get_object() # Listar um curso especifico
-
-        #Pagintion
-        self.pagination_class.page_size = 2 # quantidade de registro que quero mostrar por página
-        avaliacoes = Avaliacao.objects.filter(curso_id = pk)
-        page = self.paginate_queryset(avaliacoes)
-
-        if page is not None:
-            serializer = AvaliacaoSerializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = AvaliacaoSerializer(avaliacoes.all(), many=True)
+        curso = self.get_object() # Listar um curso especifico
+        serializer = AvaliacaoSerializer(curso.avaliacoes.all(), many=True)
 
         return Response(serializer.data)
 

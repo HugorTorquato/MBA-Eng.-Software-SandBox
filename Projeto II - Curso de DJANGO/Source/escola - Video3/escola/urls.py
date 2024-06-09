@@ -19,12 +19,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-# Importa as direçoes locais do APP
-from cursos.urls import router 
 
 urlpatterns = [
     path('api/v1/', include('cursos.urls')),
-    path('api/v2/', include(router.urls)), # chama as URLS registrada usando o viewset e routers
     path('admin/', admin.site.urls),
     #Essa rota faz faze o login no DJANGO rest_framework e não mais só no django
     path('auth/', include('rest_framework.urls')) 

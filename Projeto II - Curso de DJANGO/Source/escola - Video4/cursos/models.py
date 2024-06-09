@@ -18,7 +18,6 @@ class Curso(Base):
     class Meta:
         verbose_name = 'Curso'          # Specifies the singular name for the model.
         verbose_name_plural = 'Cursos'  # Specifies the plural name for the model.
-        ordering = ['id']               # Pelo que quermos ordenar? Ordenamento global e vale para todo projeto
 
     def __str__(self):       # This method returns the titulo of the Curso when its instance is converted to a string
         return self.titulo
@@ -34,7 +33,6 @@ class Avaliacao(Base):
         verbose_name = "Avaliação"
         verbose_name_plural = "Acaliações"
         unique_together = ['email', 'curso']
-        ordering = ['-id']               # Pelo que quermos ordenar? Invertido
 
     def __str__(self):
         return f'{self.nome} avaliou o curso {self.curso} com nota {self.avaliacao}'
