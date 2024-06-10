@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cursos',
-    'rest_framework', # Apartir de agora vai set um ap service rest
-    'rest_framework.authtoken' # Habilitar autenticação via token
+    'rest_framework' # Apartir de agora vai set um ap service rest
 ]
 
 MIDDLEWARE = [
@@ -130,8 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # DRF
 REST_FRAMEWORK ={
     'DEFAULT_AUTHENTICATION_CLASSES' : (
-        #'rest_framework.authentication.SessionAuthentication', # Remover a autenticaão por session
-        'rest_framework.authentication.TokenAuthentication', # Habilita a autenticação por token ( vamos deixar só essa nesse projeto, mas pode deixar as duas )
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES' : (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -142,16 +140,3 @@ REST_FRAMEWORK ={
     'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE':2
 }
-
-# Token.... just to see hoe it works
-# How to generate?:
-
-# 1- Open a python shell -> (pthon manage.y shell)
-# 2 - (from rest_framework.authtoken.models import Token)
-# 3 - (from django.contrib.auth.models import User)
-# 4 - (hugo = User.objects.get(id=1))
-# 5 - (token = Token.objects.create(user=hugo))
-# 6 - (token.key)
-
-
-# 6d784678d890946237dcc1bbe2396ff7bd8a4940
