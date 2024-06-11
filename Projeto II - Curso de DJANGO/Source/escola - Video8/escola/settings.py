@@ -150,7 +150,6 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle',
     ),
-    #Realmente barra as requisições
     'DEFAULT_THROTTLE_RATES': {
         'anon': '2/minute', # second, day, month, year
         'user': '3/minute'

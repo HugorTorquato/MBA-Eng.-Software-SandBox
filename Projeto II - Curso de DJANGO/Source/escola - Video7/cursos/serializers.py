@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from .models import Curso, Avaliacao
 
-from django.db.models import Avg
-
 # Defines how th object converts from class to JSON, and the other way arround
 
 class AvaliacaoSerializer(serializers.ModelSerializer):
@@ -21,12 +19,6 @@ class AvaliacaoSerializer(serializers.ModelSerializer):
             'criacao',
             'ativo'
         )
-    
-    # Validar que a nota seja entre 1 e 5 para avaliações
-    def validate_avaliacao(self, valor):
-        if valor in range(1, 6):
-            return valor
-        raise serializers.ValidationError('Feedback do erro em resposta a badrequest')
         
 
 class CursoSerializer(serializers.ModelSerializer):
@@ -48,7 +40,6 @@ class CursoSerializer(serializers.ModelSerializer):
     # Forma mais performatica por trazer somente 1 dado pequeno, id do registro.
     avaliacoes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
-    media_avaliacoes = serializers.SerializerMethodField() # quando listar os cursos as medias vão estar la
 
     class Meta:
         model = Curso
@@ -58,12 +49,5 @@ class CursoSerializer(serializers.ModelSerializer):
             'url',
             'criacao',
             'ativo',
-            'avaliacoes', # Listas das nossas avaliações
-            'media_avaliacoes'
+            'avaliacoes' # Listas das nossas avaliações
         )
-
-    def get_media_avaliacoes(self, obj):
-        media = obj.avaliacoes.aggregate(Avg('avaliacao')).get('avaliacao__avg')
-        if media is None:
-            return 0
-        return round(media*2)/2
