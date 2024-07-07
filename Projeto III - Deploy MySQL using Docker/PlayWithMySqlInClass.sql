@@ -29,7 +29,7 @@ SELECT COUNT(DISTINCT(amount)) FROM sakila.payment;
 
 
 SELECT * FROM sakila.film_category;
-SELECT category_id, count(film_id) FROM sakila.film_category GROUP BY category_id;
+SELECT category_id, count(film_id) FROM sakila.film_category GROUP BY last_update;
 
 
 
