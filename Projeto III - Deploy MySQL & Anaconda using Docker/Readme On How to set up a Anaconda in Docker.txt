@@ -37,7 +37,10 @@ Commands:
 	when you are done... close any running notebooks -> (File ->Close and shut down notebook ) then shut down jupter lab ( File -> Shutdown )
 	
 - Can use with remote-container	
+	- Install pyhon extensions in VS Code
+	- select python interpreter CRLT + P -> Python Interpreter
 	Select the python interpreter and run things.... 
+	
 
 - stop the container deleting the image
 
