@@ -1,1 +1,1 @@
-# Tell Python that this folder is an module / entiti
+# Tell Python that this folder is an module / entity

@@ -14,7 +14,7 @@ class AddUserUseCase(UseCaseInterface):
     
     def execute(self, input: AddUserInputDTO) -> AddUserOutputDTO:
 
-        user=User(id=uuid.uuid4(), name="Hugo")
+        user=User(id=uuid.uuid4(), name=input.name)
         self.user_repository.add_user(user=user)
 
-        return AddUserOutputDTO(id=user.id, name=user.name)
+        return AddUserOutputDTO(id=user.id, name=user.name)   

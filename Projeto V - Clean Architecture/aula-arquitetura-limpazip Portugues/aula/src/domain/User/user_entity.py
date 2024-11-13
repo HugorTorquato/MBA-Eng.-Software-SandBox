@@ -23,6 +23,14 @@ class User:
             raise Exception("Name must be a str and not empty")
     
 
+
+
+ 
+
+
+
+
+
 # User_1 = User(id=uuid4(), name="Hugo")
 # User_2 = User(id=uuid4(), name="Tay")
 # User_3 = User(id=4, name="Hugoo") ## Caso de falha que precisa de verificação
