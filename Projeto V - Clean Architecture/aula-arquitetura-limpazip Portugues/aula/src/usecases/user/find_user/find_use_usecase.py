@@ -1,5 +1,5 @@
-from domain.__seedwork.user_case_interface import UseCaseInterface
-from domain.User.user_repository_interface import UserRepositoryInterface
+from domain.__seedwork.use_case_interface import UseCaseInterface
+from domain.User.use_repository_interface import UserRepositoryInterface
 
 from usecases.user.find_user.find_user_dto import FindUserInputDTO, FindUserOutputDTO
 from domain.User.user_entity import User
