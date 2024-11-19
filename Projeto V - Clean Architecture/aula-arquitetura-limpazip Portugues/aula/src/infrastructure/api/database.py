@@ -26,4 +26,4 @@ def get_session():
 # Criação das tabelas
 # Acoplando o banco de dados no repositorio
 def create_tables():
-    Base.metadata.create_All(bind=engine)
+    Base.metadata.create_all(bind=engine)

@@ -6,17 +6,17 @@
 
 # Toda classe que receber essa injeção de dependencia va ter de implementar esses metodos
 
-from abc import ABC, abstractclassmethod
-from domain.User.user_entity import user
+from abc import ABC, abstractmethod
+from domain.User.user_entity import User
 from uuid import UUID
-from typing import list
+from typing import List
 
 #User entity interface ( what we will expect to have implemented)
 class UserRepositoryInterface(ABC):
     
     # Implementar a camada do contrato
 
-    @abstractclassmethod
+    @abstractmethod
     def add_user(self, user: User) -> None:
         #Espero None como output
 
@@ -24,14 +24,14 @@ class UserRepositoryInterface(ABC):
         # Isso garante que o que concetar nessa interface vai respeitar o contrato
         raise NotImplementedError
         
-    @abstractclassmethod
+    @abstractmethod
     def find_user(self, user_id: UUID) -> User:
         raise NotImplementedError
         
-    @abstractclassmethod
+    @abstractmethod
     def update_user(self, user: User) -> None:
         raise NotImplementedError
         
-    @abstractclassmethod
-    def list_users(self) -> List[User]:
+    @abstractmethod
+    def list_user(self) -> List[User]:
         raise NotImplementedError

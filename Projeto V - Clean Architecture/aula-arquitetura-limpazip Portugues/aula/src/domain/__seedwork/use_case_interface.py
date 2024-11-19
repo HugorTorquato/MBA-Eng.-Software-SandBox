@@ -1,6 +1,6 @@
 
 
-from abc import abc, abstractclassmethod
+from abc import ABC, abstractmethod
 from typing import Any
 
 class UseCaseInterface(ABC):
@@ -8,6 +8,6 @@ class UseCaseInterface(ABC):
     #Alguem vai receber esse contrato e quem receber tem de implementar tudo que está 
     # definido nesse contrato
 
-    @abstractclassmethod
+    @abstractmethod
     def execute(input: Any) -> Any:
         raise NotImplementedError

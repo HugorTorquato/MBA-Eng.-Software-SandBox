@@ -16,10 +16,10 @@ from infrastructure.User.sqlalchemy.user_model import UserModel
 
 class UseRepository(UserRepositoryInterface):
     
-    session: Session
+
 
     # Semre que for instanciar tem de passar uma sessão
-    def __init__(self, session:Session):
+    def __init__(self, session: Session):
         self.session: Session = session
 
     def add_user(self, user: User) -> None:

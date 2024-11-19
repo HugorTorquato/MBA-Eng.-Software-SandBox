@@ -8,13 +8,11 @@ from usecases.user.list_users.list_users_dto import ListUserInputDTO, ListUserOu
 # Definição dos contrator - tem como dependencia o contrato
 class ListUsertsUseCase(UseCaseInterface):
 
-    user_repository: UserRepositoryInterface
-
     def __init__(self, user_repository: UserRepositoryInterface):
         self.user_repository = user_repository
 
     def execute(self, input: ListUserInputDTO) -> ListUserOutputDTO:
-        users = self.user_repository.list_users()
+        users = self.user_repository.list_user()
         # Retorna uma lista de usuários
 
         # Recebe uma lista de entidades e precisamos passar nos contratos os

@@ -17,10 +17,10 @@ class User:
 
     def validate(self):
         if not isinstance(self.id, UUID):
-            raise Exception("ID must be UUID")
-        
+            raise Exception("id must be an UUID")
+
         if not isinstance(self.name, str) or len(self.name) == 0:
-            raise Exception("Name must be a str and not empty")
+            raise Exception("name is required")
     
 
 

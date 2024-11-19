@@ -12,7 +12,6 @@ from usecases.user.find_user.find_user_usecase import FindUserUseCase
 from usecases.user.list_users.list_users_dto import ListUsersInputDto
 from usecases.user.list_users.list_users_usecase import ListUsersUseCase
 
-router = APIRouter(prefix="/users", tags=["Users"])
 
 
 @router.post("/")
