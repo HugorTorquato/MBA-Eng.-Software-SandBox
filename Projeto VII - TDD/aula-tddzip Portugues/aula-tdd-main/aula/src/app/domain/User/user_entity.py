@@ -12,7 +12,6 @@ class User:
     def __init__(self, id:UUID, name:str):
         self.id = id
         self.name = name
-        self.name = name
         self.task_list = []
         self.validate()
 
@@ -26,3 +25,13 @@ class User:
 
     def collect_tasks(self, tasks:List[Task]) -> None: # Não vai retornar nada
         self.task_list.extend(tasks)
+
+    def count_pending_tasks(self):
+        # return self.task_list.count()
+
+        count = 0
+        for task in self.task_list:
+            if task.completed is False:
+                count += 1
+        
+        return count
