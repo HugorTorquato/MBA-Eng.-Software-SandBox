@@ -1,0 +1,6 @@
+services:
+  escola:
+    build: .
+    stdin_open: true
+    volumes:
+      - .:/app

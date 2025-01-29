@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cursos>
+    <curso>
+        <id>1</id>
+        <codigo>PROG01</codigo>
+        <descricao>Curso de Introdução à Programação</descricao>
+        <cargaHoraria>40</cargaHoraria>
+        <capacidade>30</capacidade>
+    </curso>
+    <curso>
+        <id>2</id>
+        <codigo>WEBDEV</codigo>
+        <descricao>Curso de Desenvolvimento Web</descricao>
+        <cargaHoraria>60</cargaHoraria>
+        <capacidade>25</capacidade>
+    </curso>
+    <curso>
+        <id>3</id>
+        <codigo>BANCOS</codigo>
+        <descricao>Curso de Banco de Dados</descricao>
+        <cargaHoraria>50</cargaHoraria>
+        <capacidade>20</capacidade>
+    </curso>
+    <curso>
+        <id>4</id>
+        <codigo>MLCURS</codigo>
+        <descricao>Curso de Machine Learning</descricao>
+        <cargaHoraria>80</cargaHoraria>
+        <capacidade>15</capacidade>
+    </curso>
+    <curso>
+        <id>5</id>
+        <codigo>SECINF</codigo>
+        <descricao>Curso de Segurança da Informação</descricao>
+        <cargaHoraria>70</cargaHoraria>
+        <capacidade>20</capacidade>
+    </curso>
+</cursos>
